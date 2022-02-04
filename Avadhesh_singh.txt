@@ -142,3 +142,44 @@ public class Assignment{
 
 // 6th Program
 
+public class Assignment{
+    public static void main(String args[])
+    {
+        Scanner read = new Scanner(System.in);
+
+        System.out.println("Enter the integer");
+
+        int n = read.nextInt();
+
+        ArrayList<Integer> alist = new ArrayList<Integer>();
+
+        while(n > 0)
+        {
+            int remainder = n%2;   
+            alist.add(remainder);
+            n = n/2;
+
+        }
+
+        System.out.print("Binary representation of 25 is :");
+        // printing the converted binary number
+        for(int i = alist.size()-1; i>=0; i--)
+            {
+                System.out.print(alist.get(i));
+            }
+        // just for printing a new Line    
+        System.out.println();
+
+        int countZeroBits = 0;
+
+        for(int i = alist.size()-1; i>=0; i--)
+            {
+                if(alist.get(i) == 0 )
+                    countZeroBits++;
+
+            }
+
+        System.out.println("Number of zero bits: "+countZeroBits);
+
+    }
+}
